@@ -4,6 +4,7 @@ Examens de LINMA1170
 Nous avons comme ambition de rassembler ici un bon nombre de correctifs
 pour ce cours.
 Ceci est bien sûr impossible sans votre aide.
+Voir [ce post](http://www.forum-epl.be/viewtopic.php?p=109318) qui en parle.
 
 Merci de signaler les erreurs ou possibles amélioration
 ou d'envoyer vos contributions
