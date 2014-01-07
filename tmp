@@ -1,0 +1,10 @@
+*.aux
+*.aux
+*.fdb_latexmk
+*.fdb_latexmk
+*.log
+*.log
+*.out
+*.out
+*.pdf
+*.pdf

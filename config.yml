@@ -1,0 +1,54 @@
+input_base: .
+output_base: /home/blegat/Dropbox
+clients:
+  - name: MAP
+    arguments: &args
+      year: [2012, 2013]
+      month: [Janvier, Juin, Août]
+      minmaj: [Mineure, Majeure]
+    input: &input
+      path_format: "{0}/{1}/{2}/INMA1170-{0}-{1}-{2}.pdf"
+      parameters:
+        - arg: year
+        - arg: month
+        - arg: minmaj
+    output:
+      path_format: MAP/{0}
+      parameters:
+        - &output_end
+          path_format: "Q5/INMA1170/Examens/{0}_{1}/INMA1170-{0}-{1}-{2}.pdf"
+          parameters:
+            - arg: year
+            - arg: month
+            - arg: minmaj
+  - name: MAP-Sol
+    arguments: *args
+    input: &input_sol
+      path_format: "{0}/{1}/{2}/INMA1170-{0}-{1}-{2}-Sol.pdf"
+      parameters:
+        - arg: year
+        - arg: month
+        - arg: minmaj
+    output:
+      path_format: MAP/{0}
+      parameters:
+        - &output_end_sol
+          path_format: "Q5/INMA1170/Examens/{0}_{1}/INMA1170-{0}-{1}-{2}-Sol.pdf"
+          parameters:
+            - arg: year
+            - arg: month
+            - arg: minmaj
+  - name: EPL Backup
+    arguments: *args
+    input: *input
+    output:
+      path_format: EPL-Backup/{0}
+      parameters:
+        - *output_end
+  - name: EPL Backup-Sol
+    arguments: *args
+    input: *input_sol
+    output:
+      path_format: EPL-Backup/{0}
+      parameters:
+        - *output_end_sol
