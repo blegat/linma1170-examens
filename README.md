@@ -1,3 +1,5 @@
+**DEPRECATED** Use [this repo](https://github.com/Gp2mv3/Syntheses/) instead.
+
 Examens de LINMA1170
 ====================
 

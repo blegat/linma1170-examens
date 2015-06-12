@@ -32,11 +32,24 @@
 \newcommand\np[1]{\numprint{#1}}
 
 \usepackage{ifthen}
-%\input{config.tex}
-\ifthenelse{\isundefined{\Sol}}{\def\Sol{true}}{}
+\usepackage{tikz}
+\usepackage{verbatim}
+\usetikzlibrary{calc,arrows}
+\usepackage[framemethod=tikz]{mdframed}
+\input{../../../greyarrow.tex}
 
-\newcommand{\solution}[1]
-{\ifthenelse{\equal{\Sol}{true}}{\subsection*{Solution}#1}{}}
+\ifthenelse{\isundefined{\Sol}}{\def\Sol{true}}{}
+\ifthenelse{\equal{\Sol}{false}}
+{
+  \newenvironment{solution}{\expandafter\comment}{\expandafter\endcomment}
+}
+{
+  \newmdenv[style=mysquare]{solution}
+}
+
+
+%\newcommand{\solution}[1]
+%{\ifthenelse{\equal{\Sol}{true}}{\subsection*{Solution}#1}{}}
 
 \DeclareMathOperator{\newdiff}{d} % use \dif instead
 \newcommand{\dif}{\newdiff\!}
